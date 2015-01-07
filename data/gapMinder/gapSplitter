@@ -1,0 +1,31 @@
+#$ /bin/bash
+
+# Create variable to define our gapminder file.
+# It is assumed that this file is tab delimited
+GAP_MINDER_FILE="gapminderDataFiveYear.txt"
+
+# Create individual files for each country-year combination 
+while IFS=$'\t' read country year pop continent lifeExp gdp 
+do 
+    # Redirect output from echo command to a new file
+    echo -e "$country\t$year\t$pop\t$continent\t$lifeExp\t$gdp" > "$country-$year.txt" 
+done < $GAP_MINDER_FILE
+
+# Create all of our year directories
+mkdir 19{5..9}{2,7} 200{2,7}
+
+# Use for loops to move each file into a corresponding directory
+for filename in *1952.txt; do mv "$filename" 1952; done
+for filename in *1957.txt; do mv "$filename" 1957; done
+for filename in *1962.txt; do mv "$filename" 1962; done
+for filename in *1967.txt; do mv "$filename" 1967; done
+for filename in *1972.txt; do mv "$filename" 1972; done
+for filename in *1977.txt; do mv "$filename" 1977; done
+for filename in *1982.txt; do mv "$filename" 1982; done
+for filename in *1987.txt; do mv "$filename" 1987; done
+for filename in *1992.txt; do mv "$filename" 1992; done
+for filename in *1997.txt; do mv "$filename" 1997; done
+
+for filename in *2002.txt; do mv "$filename" 2002; done
+for filename in *2007.txt; do mv "$filename" 2007; done
+
