@@ -1,4 +1,4 @@
-#$ /bin/bash
+#!/bin/bash
 
 # Create variable to define our gapminder file.
 # It is assumed that this file is tab delimited
