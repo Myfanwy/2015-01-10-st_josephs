@@ -24,7 +24,7 @@ for i in $(seq 1 $NUM_COUNTRIES)
 do
    COUNTRY=$(head -n $i countries.txt | tail -n 1)
    echo $COUNTRY
-   grep "$COUNTRY" $GAP_MINDER_FILE > $(echo $COUNTRY | sed s/\\s/_/g).cc.txt
+   grep "$COUNTRY" $GAP_MINDER_FILE > $(echo $COUNTRY | sed s/\\[\\s\\.\\,\\]/_/g).cc.txt
 done 
 
 # Split by country. all rows in one file.
