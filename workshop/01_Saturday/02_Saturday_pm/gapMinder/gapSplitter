@@ -13,7 +13,7 @@
 
 # Create variable to define our gapminder file.
 # It is assumed that this file is tab delimited
-GAP_MINDER_FILE="gapminderDataFiveYear.txt"
+GAP_MINDER_FILE="../gapminderDataFiveYear.txt"
 
 # Create list of countries
 awk -F$'\t' '{print $1}' $GAP_MINDER_FILE | uniq > countries.txt
